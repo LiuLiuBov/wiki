@@ -1,0 +1,22 @@
+{% extends "encyclopedia/layout.html" %}
+{% block title %}
+create a new page
+{% endblock %}
+
+{% block random %}
+    <a href="/wiki/{{ random_entry }}">Random Page</a>
+{% endblock %}
+
+{% block body %}
+{% if error %}
+    <p>{{ error }}</p>
+{% endif %}
+<form method="POST" action="{% url 'create' %}">
+    {% csrf_token %}
+    <label for="text">Enter title:</label><br>
+    <input type="text" id="title" name="title" size="50"><br>
+    <label for="text">Enter text:</label><br>
+    <input type="text" name="text" size="2000" style="width: 1000px;"><br>
+    <input type="submit" value="Save">
+  </form>
+  {% endblock %}

@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+{% load markdownify %}
+
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block random %}
+    <a href="/wiki/{{ random_entry }}">Random Page</a>
+{% endblock %}
+
+{% block body %}
+{% for result in results %}
+            <li><a href="/wiki/{{ result }}">{{ result }}</a></li>
+        {% endfor %}
+{% endblock %}

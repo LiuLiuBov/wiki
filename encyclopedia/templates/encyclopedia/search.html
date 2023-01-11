@@ -1,0 +1,10 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block search %}
+
+<form action="search/" method="get">
+    <input type="text" id="search-input" name="q">
+    <button type="submit">Go</button>
+</form>
+
+{% endblock %}
